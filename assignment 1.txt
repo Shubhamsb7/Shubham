@@ -1,0 +1,40 @@
+Write a SQL statement to create a simple table countries including columns country_id,country_name and region_id ?
+create table countries(country_id integer ,country_name varchar(20), region_id varchar(9) ) ;
+CREATE TABLE
+assignment=# \d table
+Did not find any relation named "table".
+assignment=# \d countries
+                       Table "public.countries"
+    Column    |         Type          | Collation | Nullable | Default
+--------------+-----------------------+-----------+----------+---------
+ country_id   | integer               |           |          |
+ country_name | character varying(20) |           |          |
+ region_id    | character varying(9)  |           |          |
+
+
+Write a SQL statement to create a simple table countries including columns country_id, country_name and region_id which already exist ?
+assignment=# create table countries(country_id integer ,country_name varchar(20), region_id varchar(9) ) ;
+ERROR:  relation "countries" already exists
+
+Write a SQL statement to create the structure of a table dup_countries similar to countries ?
+assignment=# select * from dup_countries ;
+ country_id | country_name | country_region
+------------+--------------+----------------
+(0 rows)
+Write a SQL statement to create a duplicate copy of countries table including structure and data by name dup_countries ?
+
+
+Write a SQL statement to create a table named countries, including country_id, country_name and region_id and make sure that no duplicate data against column country_id will be allowed at the time of insertion?
+ create table country ( country_id INTEGER PRIMARY KEY NOT NULL,
+assignment(# country_name VARCHAR(10),
+assignment(# country_region VARCHAR(10));
+CREATE TABLE
+assignment=# \d country
+                         Table "public.country"
+     Column     |         Type          | Collation | Nullable | Default
+----------------+-----------------------+-----------+----------+---------
+ country_id     | integer               |           | not null |
+ country_name   | character varying(10) |           |          |
+ country_region | character varying(10) |           |          |
+Indexes:
+    "country_pkey" PRIMARY KEY, btree (country_id)
